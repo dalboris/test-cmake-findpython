@@ -22,4 +22,4 @@ jobs:
         mkdir build
         cd build
         cmake --version
-        cmake $GITHUB_WORKSPACE -DPython_ROOT_DIR="$pythonLocation" -DPython_FIND_STRATEGY=LOCATION
+        cmake $GITHUB_WORKSPACE -DPython_ROOT_DIR="$pythonLocation"

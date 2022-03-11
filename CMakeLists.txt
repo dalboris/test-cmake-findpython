@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.12...3.15)
 project(test-cmake-findpython)
 
 cmake_policy(GET CMP0094 _CMP0094)
