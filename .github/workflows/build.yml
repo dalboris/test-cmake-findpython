@@ -1,0 +1,25 @@
+name: Build
+on: [push]
+defaults:
+  run:
+    shell: bash
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-10.15, windows-2019, ubuntu-18.04]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+        architecture: 'x64'
+    - name: Configure
+      working-directory: ${{runner.workspace}}
+      run: |
+        mkdir build
+        cd build
+        cmake --version
+        cmake $GITHUB_WORKSPACE -DPython_ROOT_DIR="$pythonLocation"
